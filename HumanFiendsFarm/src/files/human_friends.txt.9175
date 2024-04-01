@@ -1,6 +1,6 @@
 id: 1, class_type: Pets, name: Derrik, type: Dogs, birthdate: 2023-08-06, commands: Walk, Sit
 id: 2, class_type: Pets, name: Pan, type: Cats, birthdate: 2021-08-05, commands: Walk, Sit
-id: 3, class_type: Pets, name: Dasik, type: Cats, birthdate: 2020-09-02, commands: Sit, Stay
+id: 3, class_type: Pets, name: Dasik, type: Cats, birthdate: 2020-09-02, commands: Sit
 id: 4, class_type: Pets, name: Sanny, type: Dogs, birthdate: 2023-09-09, commands: Walk, Sit, Paw
 id: 5, class_type: Pets, name: Firo, type: Cats, birthdate: 2008-09-04, commands: Sit
 id: 6, class_type: Pack_animal, name: Stared, type: Camels, birthdate: 2010-08-12, commands: Walk, Meow

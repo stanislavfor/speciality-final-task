@@ -7,3 +7,6 @@ Pounce
 Roll
 Hide
 Paw
+Bark
+Scratch
+Spin

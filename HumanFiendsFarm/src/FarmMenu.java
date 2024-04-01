@@ -15,16 +15,17 @@ public class FarmMenu {
         boolean exit = false;
         while (!exit) {
             System.out.println(("Menu - Human Friends Farm").toUpperCase());
-            System.out.println("1 - Вывести весь список human_friends ");
-            System.out.println("2 - Вывести список human_friends по убывания birthdate ");
-            System.out.println("3 - Вывести список human_friends по значению type ");
-            System.out.println("4 - Вывести количество записей human_friends ");
-            System.out.println("5 - Добавить новую запись в human_friends ");
-            System.out.println("6 - Вывести список всех команд ");
-            System.out.println("7 - Добавить новую команду ");
-            System.out.println("8 - Найти элемент списка и добавить команду");
-            System.out.println("9 - Найти элемент списка и заменить команду");
-            System.out.println("0 - Выход ");
+            System.out.println("1  - Вывести весь список Human Friends ");
+            System.out.println("2  - Вывести список Human Friends по убывания birthdate ");
+            System.out.println("3  - Вывести список Human Friends по значению type ");
+            System.out.println("4  - Вывести количество записей Human Friends ");
+            System.out.println("5  - Добавить новую запись в Human Friends ");
+            System.out.println("6  - Вывести всех команды из списка ");
+            System.out.println("7  - Добавить новую команду ");
+            System.out.println("8  - Добавить команду в элемент поиска");
+            System.out.println("9  - Заменить команду в элементе поиска");
+            System.out.println("10 - Поиск в Human Friends ");
+            System.out.println("0  - Выход ");
             System.out.print("Выберите действие : ");
             int choice = scanner.nextInt();
             scanner.nextLine(); // Очистка буфера сканера
@@ -55,6 +56,9 @@ public class FarmMenu {
                     break;
                 case 9:
                     changeCommandToElementClass();
+                    break;
+                case 10:
+                    searchElementsClass();
                     break;
                 case 0:
                     ProgramsExit();
@@ -104,12 +108,18 @@ public class FarmMenu {
 
     private static void addCommandToAnimalClass() {
         // Реализация добавления к записи животного новой команды в файл human_friends.txt
-
+        AnimalsFileUpdate.commandsAnimalsAdd();
     }
 
     private static void changeCommandToElementClass() {
         // Реализация замены в записи животного команды в файле human_friends.txt
 
+    }
+
+    private static void searchElementsClass() {
+        // Реализация поиска в файле human_friends.txt
+        //AnimalsSearch.SearchMethode();
+        AnimalsSearchLine.inputScanMethode();
     }
 
     private static void ProgramsExit() {
