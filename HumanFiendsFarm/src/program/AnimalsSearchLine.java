@@ -1,3 +1,5 @@
+package program;// program.AnimalsSearchLine.java
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -7,6 +9,7 @@ public class AnimalsSearchLine {
     private static final String FILE_PATH = "src/files/human_friends.txt";
 
     public static void main(String[] args) {
+
         AnimalsSearchLine.inputScanMethode();
     }
 
@@ -46,4 +49,5 @@ public class AnimalsSearchLine {
             System.err.println("Ошибка при чтении файла : " + e.getMessage());
         }
     }
+
 }

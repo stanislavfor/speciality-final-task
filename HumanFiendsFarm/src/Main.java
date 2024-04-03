@@ -1,10 +1,11 @@
 // Main.java
 
+import program.FarmMenu;
+
 public class Main {
     public static void main(String[] args) {
-
-        System.out.println("Добро пожаловать на Ферму 'Human Friends' !");
+        boolean showTitleIndex = false;
         FarmMenu farmMenu = new FarmMenu();
-        farmMenu.displayMenu();
+        farmMenu.displayMenu(showTitleIndex);
     }
 }

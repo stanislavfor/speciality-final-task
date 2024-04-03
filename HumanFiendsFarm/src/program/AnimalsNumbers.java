@@ -1,4 +1,4 @@
-// AnimalsIds.java
+package program;// program.AnimalsNumbers.java
 
 import extra.NumberToWordsConverter;
 
@@ -6,19 +6,18 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class AnimalsIds {
+public class AnimalsNumbers {
     private static final String FILE_PATH = "src/files/human_friends.txt";
 
     public static void main(String[] args) {
-        AnimalsIds.AnimalsNumber();
+
+        AnimalsNumbers.AnimalsNumber();
     }
 
     public static void AnimalsNumber() {
         NumberToWordsConverter outer = new NumberToWordsConverter();
-
         try {
             int maxId = Integer.MIN_VALUE;
-
             try (BufferedReader reader = new BufferedReader(new FileReader(FILE_PATH))) {
                 String line;
                 while ((line = reader.readLine()) != null) {

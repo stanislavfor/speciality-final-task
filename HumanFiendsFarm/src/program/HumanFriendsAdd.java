@@ -1,4 +1,4 @@
-// HumanFriends.java
+package program;// program.HumanFriendsAdd.java
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -7,7 +7,7 @@ import java.util.Scanner;
 import java.io.*;
 import java.util.*;
 
-public class HumanFriends {
+public class HumanFriendsAdd {
 
     private static final String FILE_PATH = "src/files/human_friends.txt";
     private static final String COMMANDS_FILE_PATH = "src/files/animal_commands.txt";
@@ -40,7 +40,7 @@ public class HumanFriends {
             List<String> commands = getCommandsFromFile();
 
             // Выбор команд для животного
-            System.out.print("Введите команды из перечисленного через запятую " + String.join(", ", commands + " : "));
+            System.out.println("Введите команды из перечисленного через запятую \n" + String.join(", ", commands + " : "));
             String commandsInput = scanner.nextLine();
             List<String> selectedCommands = new ArrayList<>(Arrays.asList(commandsInput.split("\\s*,\\s*")));
 

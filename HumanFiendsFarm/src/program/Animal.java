@@ -1,4 +1,4 @@
-// Animal.java
+package program;// program.Animal.java
 
 import java.util.Date;
 import java.util.Comparator;
@@ -10,6 +10,8 @@ public class Animal {
     private String type;
     private Date birthdate;
     private String commands;
+    private String choceString;
+
 
     // Конструктор
     public Animal(int farm_id, String classType, String name, String type, Date birthdate, String commands) {
@@ -21,13 +23,39 @@ public class Animal {
         this.commands = commands;
     }
 
+    public Animal(String choceString) {
+        this.choceString = choceString;
+    }
+
     // Геттеры и Сеттеры
 
-    // Статические компараторы для разных критериев сравнения
-    public static Comparator<Animal> ClassTypeComparator = new Comparator<Animal>() {
+    public int getFarmId() {
+        return farm_id;
+    }
+
+    public String getClassType() {
+        return classType;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getChoceString() {
+        return choceString;
+    }
+
+    // Статические компараторы
+
+    public static Comparator<Animal> ChoceComparator = new Comparator<Animal>() {
         @Override
+        // Компаратор для сравнения животных по choceString
         public int compare(Animal a1, Animal a2) {
-            return a2.classType.compareTo(a1.classType);
+            return a2.getChoceString().compareTo(a1.getChoceString());
         }
     };
 
@@ -42,6 +70,14 @@ public class Animal {
     @Override
     public String toString() {
         return String.format("id: %d, class_type: %s, name: %s, type: %s, birthdate: %s, commands: %s",
-                farm_id, classType, name, type, birthdate.toString(), commands);
+                farm_id, classType, name, type, birthdate, commands);
     }
+
+//    @Override
+//    public String toString() {
+//        return String.format("id: %d, class_type: %s, name: %s, type: %s, birthdate: %s, commands: %s",
+//                farm_id, classType, name, type, birthdate.toString(), commands);
+//    }
+
+
 }

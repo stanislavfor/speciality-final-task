@@ -1,4 +1,4 @@
-// AnimalsType.java
+package program;// program.AnimalsBirthdate.java
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -10,14 +10,15 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
-public class AnimalsType {
+public class AnimalsBirthdate {
     private static final String FILE_PATH = "src/files/human_friends.txt";
 
     public static void main(String[] args) {
-        AnimalsType.SortedAnimalsByType();
+
+        AnimalsBirthdate.SortedAnimalsByBirthdate();
     }
 
-    public static void SortedAnimalsByType() {
+    public static void SortedAnimalsByBirthdate() {
         List<Animal> animals = new ArrayList<>();
         try {
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -33,7 +34,9 @@ public class AnimalsType {
                     String commands = parts[5].split(": ")[1];
                     animals.add(new Animal(farm_id, classType, name, type, birthdate, commands));
                 }
-                Collections.sort(animals, Animal.ClassTypeComparator);
+                //Collections.sort(animals);
+                // Сортировка по дате рождения
+                Collections.sort(animals, Animal.BirthdateComparator);
                 for (Animal animal : animals) {
                     System.out.println(animal);
                 }

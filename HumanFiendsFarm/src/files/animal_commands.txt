@@ -10,3 +10,12 @@ Paw
 Bark
 Scratch
 Spin
+Jump
+Trot
+Gallop
+Walk
+Carry Load
+Bray
+Canter
+Kick
+Run

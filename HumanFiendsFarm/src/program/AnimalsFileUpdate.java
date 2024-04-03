@@ -1,4 +1,4 @@
-// AnimalsFileUpdate.java
+package program;// program.AnimalsFileUpdate.java
 
 import java.io.*;
 import java.util.*;

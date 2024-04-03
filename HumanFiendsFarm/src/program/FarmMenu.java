@@ -1,43 +1,54 @@
-// FarmMenu.java
+package program;// program.FarmMenu.java
 
 import java.util.*;
 
 public class FarmMenu {
-    private static final String FILE_PATH = "src/files/human_friends.txt";
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         FarmMenu farmMenu = new FarmMenu();
-        farmMenu.displayMenu();
+        boolean showTitleIndex = false;
+        farmMenu.displayMenu(showTitleIndex);
     }
 
-    public void displayMenu() {
+    public static void menuTitleMethode(boolean showTitleIndex){
+        if (!showTitleIndex) {
+            System.out.println(("Menu - Human Friends Farm").toUpperCase()
+                    + " (Ферма 'Друзья человека') ");
+        } else {
+            System.out.println(("Menu").toUpperCase());
+        };
+    }
+
+    public void displayMenu(boolean showTitleIndex) {
+        System.out.println("Добро пожаловать на Ферму 'Human Friends' !");
         Scanner scanner = new Scanner(System.in);
         boolean exit = false;
         while (!exit) {
-            System.out.println(("Menu - Human Friends Farm").toUpperCase());
+            menuTitleMethode(showTitleIndex);
             System.out.println("1  - Вывести весь список Human Friends ");
-            System.out.println("2  - Вывести список Human Friends по убывания birthdate ");
-            System.out.println("3  - Вывести список Human Friends по значению type ");
-            System.out.println("4  - Вывести количество записей Human Friends ");
-            System.out.println("5  - Добавить новую запись в Human Friends ");
-            System.out.println("6  - Вывести всех команды из списка ");
+            System.out.println("2  - Сортировать список ");
+            System.out.println("3  - Сортировать список по дате рождения ");
+            System.out.println("4  - Вывести общее количество Human Friends ");
+            System.out.println("5  - Добавить в список Human Friends ");
+            System.out.println("6  - Вывести все команды ");
             System.out.println("7  - Добавить новую команду ");
-            System.out.println("8  - Добавить команду в элемент поиска");
-            System.out.println("9  - Заменить команду в элементе поиска");
+            System.out.println("8  - Добавить команду из списка к элементу ");
+            System.out.println("9  - Удалить команду в элементе ");
             System.out.println("10 - Поиск в Human Friends ");
             System.out.println("0  - Выход ");
             System.out.print("Выберите действие : ");
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Очистка буфера сканера
+            scanner.nextLine();
+            showTitleIndex = true;
             switch (choice) {
                 case 1:
                     AllAnimalsClass();
                     break;
                 case 2:
-                    SortedByBirthdateClass();
+                    SortedByClass();
                     break;
                 case 3:
-                    SortedByTypeClass();
+                    SortedByBirthdateClass();
                     break;
                 case 4:
                     NumberOfAnimalsClass();
@@ -55,7 +66,7 @@ public class FarmMenu {
                     addCommandToAnimalClass();
                     break;
                 case 9:
-                    changeCommandToElementClass();
+                    changeElementCommandsClass();
                     break;
                 case 10:
                     searchElementsClass();
@@ -73,7 +84,9 @@ public class FarmMenu {
 
     private static void AllAnimalsClass() {
         // Реализация вывода всех животных из файла human_friends.txt
-        AnimalsList.SortedAnimalsByList();
+        //program.AnimalsList.SortedAnimalsByList();
+//        program.AnimalsList.printAnimalsList();
+        AnimalsList.readingMenuMethode();
     }
 
     private static void SortedByBirthdateClass() {
@@ -81,19 +94,19 @@ public class FarmMenu {
         AnimalsBirthdate.SortedAnimalsByBirthdate();
     }
 
-    private static void SortedByTypeClass() {
-        // Реализация вывода животных, отсортированных по type
-        AnimalsType.SortedAnimalsByType();
+    private static void SortedByClass() {
+        // Реализация вывода животных, отсортированных по выбранному значению
+        AnimalsSorted.SortedAnimalsBy();
     }
 
     private static void NumberOfAnimalsClass() {
         // Реализация вывода общего количества животных из файла human_friends.txt
-        AnimalsIds.AnimalsNumber();
+        AnimalsNumbers.AnimalsNumber();
     }
 
     private static void addNewAnimalClass() {
         // Реализация добавления нового животного в файл human_friends.txt
-        HumanFriends.addNewAnimal();
+        HumanFriendsAdd.addNewAnimal();
     }
 
     private static void printAllCommandsClass() {
@@ -111,9 +124,9 @@ public class FarmMenu {
         AnimalsFileUpdate.commandsAnimalsAdd();
     }
 
-    private static void changeCommandToElementClass() {
-        // Реализация замены в записи животного команды в файле human_friends.txt
-
+    private static void changeElementCommandsClass() {
+        // Реализация удаления в записи животного команды в файле human_friends.txt
+        AnimalsCommandRemove.commandToRemove();
     }
 
     private static void searchElementsClass() {

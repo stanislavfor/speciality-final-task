@@ -1,4 +1,4 @@
-// AnimalsCommandOutput.java
+package program;// program.AnimalsCommandOutput.java
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AnimalsCommandOutput {
+
+    private static final String FILE_PATH = "src/files/animal_commands.txt";
 
     public static void main(String[] args) {
         AnimalsCommandOutput.CommandOutput();
@@ -22,8 +24,6 @@ public class AnimalsCommandOutput {
 
     private static List<String> getCommandsFromFile() {
         List<String> commands = new ArrayList<>();
-        String FILE_PATH = "src/files/animal_commands.txt";
-
         try (BufferedReader reader = new BufferedReader(new FileReader(FILE_PATH))) {
             String line;
             while ((line = reader.readLine()) != null) {
