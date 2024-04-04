@@ -1,5 +1,7 @@
 package program;// program.AnimalsFileUpdate.java
 
+import extra.DateGenerator;
+
 import java.io.*;
 import java.util.*;
 
@@ -11,7 +13,7 @@ public class AnimalsFileUpdate {
 
     private static final String FRIENDS_FILE_PATH = "src/files/human_friends.txt";
     private static final String COMMANDS_FILE_PATH = "src/files/animal_commands.txt";
-    private static Random random = new Random();
+
 
     public static void commandsAnimalsAdd() {
         Scanner scanner = new Scanner(System.in);
@@ -36,7 +38,7 @@ public class AnimalsFileUpdate {
         scanner.nextLine();
         if (commandIndex >= 0 && commandIndex < availableCommands.size()) {
             String selectedCommand = availableCommands.get(commandIndex);
-            createNewFilePathWithRandomId();
+//            createNewFilePathWithId();
             updateAnimalCommands(animalId, selectedCommand);
 //        if (availableCommands.contains(newCommand)) {
 //            updateAnimalCommands(animalId, newCommand);
@@ -62,7 +64,7 @@ public class AnimalsFileUpdate {
         private static void updateAnimalCommands(int animalId, String selectedCommand) {
         String originalFilePath = FRIENDS_FILE_PATH;
         String backupFilePath = createBackupFilePath(originalFilePath);
-        // Создаем копию оригинального файла с уникальным расширением
+        // Создание копии оригинального файла с уникальным расширением
         File originalFile = new File(originalFilePath);
         File backupFile = new File(backupFilePath);
         if (!originalFile.renameTo(backupFile)) {
@@ -88,7 +90,7 @@ public class AnimalsFileUpdate {
             if (!isUpdated) {
                 System.out.println("Животное с id '" + animalId + "' не найдено.");
             } else {
-                System.out.println("Файл human_friends.txt обновлен.");
+                System.out.println("Файл human_friends.txt обновлен. Команда для обучения добавлена.");
             }
         } catch (IOException e) {
             System.err.println("Ошибка при чтении/записи файла : " + e.getMessage());
@@ -96,15 +98,18 @@ public class AnimalsFileUpdate {
     }
 
 
-    // Генерация четырехзначного числа
-    private static String createNewFilePathWithRandomId() {
-        int file_id = random.nextInt(9000) + 1000;
-        return FRIENDS_FILE_PATH + "." + file_id;
-    }
-    // Генерация четырехзначного числа
+    // Генерация числа для расширения файла, дата и время без пробела
+//    private static String createNewFilePathWithId() {
+//        //Random random = new Random();
+//        //int file_id = random.nextInt(9000) + 1000;
+//        String file_id = DateGenerator.createNewDateMethode();
+//        return FRIENDS_FILE_PATH + "." + file_id;
+//    }
+    // Генерация числа
     private static String createBackupFilePath(String originalFilePath) {
-        Random random = new Random();
-        int file_id = 1000 + random.nextInt(9000);
+        //Random random = new Random();
+        //int file_id = 1000 + random.nextInt(9000);
+        String file_id = DateGenerator.createNewDateMethode();
         return originalFilePath + "." + file_id;
     }
 

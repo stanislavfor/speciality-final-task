@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.Comparator;
 
 public class Animal {
+    // I. Переменные
     private int farm_id;
     private String classType;
     private String name;
@@ -13,7 +14,7 @@ public class Animal {
     private String choceString;
 
 
-    // Конструктор
+    // II. Конструктор
     public Animal(int farm_id, String classType, String name, String type, Date birthdate, String commands) {
         this.farm_id = farm_id;
         this.classType = classType;
@@ -27,7 +28,7 @@ public class Animal {
         this.choceString = choceString;
     }
 
-    // Геттеры и Сеттеры
+    // III. Геттеры и Сеттеры
 
     public int getFarmId() {
         return farm_id;
@@ -49,7 +50,7 @@ public class Animal {
         return choceString;
     }
 
-    // Статические компараторы
+    // IV. Статические компараторы
 
     public static Comparator<Animal> ChoceComparator = new Comparator<Animal>() {
         @Override
@@ -66,7 +67,7 @@ public class Animal {
         }
     };
 
-    // Метод toString для вывода информации о животном
+    // V. Метод toString для вывода информации о животном
     @Override
     public String toString() {
         return String.format("id: %d, class_type: %s, name: %s, type: %s, birthdate: %s, commands: %s",

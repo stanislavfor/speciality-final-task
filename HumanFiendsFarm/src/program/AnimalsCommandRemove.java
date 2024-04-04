@@ -1,5 +1,7 @@
 package program;// program.AnimalsCommandRemove.java
 
+import extra.DateGenerator;
+
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
@@ -26,7 +28,7 @@ public class AnimalsCommandRemove {
         } else {
             System.out.println("Животное с id '" + animalId + "' не найдено.");
         }
-        scanner.close();
+        //scanner.close();
     }
 
     private static String readAnimalData(int animalId, String filePath) {
@@ -40,7 +42,7 @@ public class AnimalsCommandRemove {
         } catch (IOException e) {
             System.err.println("Ошибка при чтении файла : " + e.getMessage());
         }
-        return null;
+        return filePath;
     }
 
     private static void updateAnimalCommands(int animalId, String commandToRemove, String backupFilePath) {
@@ -84,13 +86,14 @@ public class AnimalsCommandRemove {
             System.out.println("Резервная копия файла создана: " + backupFilePath);
         } catch (IOException e) {
             System.err.println("Ошибка при создании резервной копии файла: " + e.getMessage());
-            return null;
         }
         return backupFilePath;
     }
 
     private static String getRandomFileName() {
-        Random random = new Random();
-        return String.format("%04d", random.nextInt(10000));
+//        Random random = new Random();
+//        return String.format("%04d", random.nextInt(10000));
+        String rand = DateGenerator.createNewDateMethode();
+        return String.format(rand);
     }
 }

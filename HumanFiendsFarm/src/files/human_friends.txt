@@ -9,4 +9,4 @@ id: 8, class_type: Pets, name: Gorkis, type: Dogs, birthdate: 2022-09-07, comman
 id: 9, class_type: Pack_animal, name: Fradys, type: Donkeys, birthdate: 2024-01-03, commands: Walk
 id: 10, class_type: Pack_animal, name: Sahara, type: Camels, birthdate: 2015-08-14, commands: Walk, Run
 id: 11, class_type: Pack_animal, name: Sandy, type: Camels, birthdate: 2016-11-03, commands: Walk, Carry Load
-id: 12, class_type: Pets, name: Peanut, type: Hamsters, birthdate: 2021-08-01, commands: Roll, Spin
+id: 12, class_type: Pets, name: Peanut, type: Hamsters, birthdate: 2021-08-01, commands: Roll, Spin, Paw

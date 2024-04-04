@@ -32,7 +32,7 @@ public class FarmMenu {
             System.out.println("5  - Добавить в список Human Friends ");
             System.out.println("6  - Вывести все команды ");
             System.out.println("7  - Добавить новую команду ");
-            System.out.println("8  - Добавить команду из списка к элементу ");
+            System.out.println("8  - Добавить команду к элементу ");
             System.out.println("9  - Удалить команду в элементе ");
             System.out.println("10 - Поиск в Human Friends ");
             System.out.println("0  - Выход ");
